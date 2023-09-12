@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+
+    <form action="Vnd_and_usd.html">
+          <label for="amount">Amount</label>
+        <input type="text"placeholder="VND or USD"id="vnd">
+        <br>
+        <br>
+        <label for="from">From Currency</label>
+        
+    <select id="tu">
+        <option value="VND">VND</option>
+        <option value="USD">USD</option>
+    </select>
+    <br> 
+    <br>
+    <label for="123">To Currency</label>
+<select id="den">
+    <option value="VND">VND</option>
+    <option value="USD">USD</option>
+</select>
+<br> <br>
+<button type="button" onclick="USDandVND()">Chuyển Đổi</button>
+<p id="result"></p>
+</form>
+
+<script>
+    let Amout =document.getElementById("vnd").value;
+    let VND =document.getElementById("tu").value;
+    let USD =document.getElementById("den").value;
+let result;
+function USDandVND(){
+if(VND=="USD"&&USD=="VND"){
+result="result:"+(Amout*23000)+"Đ";
+}else if(VND=="VND"&&USD=="USD"){
+    result = "result:" + (Amout/23000) + "$";
+} else if (USD=="VND"){
+    result="result:"+Amout+"Đ"
+}else {
+    result="result:"+Amout+"$"
+}
+document.getElementById("result").innerHTML=result
+
+}
+</script>   
+</body>
+</html>
